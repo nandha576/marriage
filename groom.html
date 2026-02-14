@@ -6,7 +6,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
-
+<img src="groom.png" alt="">
     <style>
         body {
             margin: 0;
@@ -20,6 +20,16 @@
             align-items: center;
             overflow: hidden;
         }
+        img {
+    width: 500px;       /* perusa size */
+    height: auto;       /* aspect ratio maintain */
+    border-radius: 0;   /* circle remove pannidum */
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInImg 2s forwards;
+    position: relative;
+}
+
 
         .card {
             background: rgba(0,0,0,0.6);
@@ -33,15 +43,6 @@
             box-shadow: 0 0 30px gold;
         }
 
-        img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid gold;
-            opacity: 0;
-            animation: fadeInImg 2s forwards;
-        }
 
         h1 {
             font-family: 'Great Vibes', cursive;
@@ -95,8 +96,6 @@
 <body>
 
     <div class="card">
-        <!-- Groom Photo -->
-        <img src="groom.jpg" alt="Groom Photo">
 
         <!-- Groom Name Typing Animation -->
         <h1 id="groom-name"></h1>

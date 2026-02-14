@@ -6,8 +6,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
-    <audio id="bgMusic" src="c:\Users\குமரவே\Downloads\love_melody.mp3.mpeg"autoplay></audio>
-
+<img src ="AI image.png" alt="">
     <style>
         body {
             margin: 0;
@@ -51,7 +50,6 @@
             margin: 20px 0;
         }
 
-        /* Buttons bounce + glow */
         .menu a {
             display: block;
             margin: 15px auto;
@@ -88,7 +86,6 @@
             to { opacity: 1; }
         }
 
-        /* Responsive */
         @media (max-width: 600px) {
             h1 { font-size: 40px; }
             h2 { font-size: 24px; }
@@ -98,11 +95,51 @@
     </style>
 </head>
 <body>
+<!-- Music Icon -->
+<img id="musicBtn" src="images/music_icon.png" 
+     alt="Play Music" 
+     style="width:50px; position:fixed; top:20px; right:20px; cursor:pointer; z-index:1000;">
 
-    <!-- Background Music -->
-    <audio id="bgMusic" src="wedding_music.mp3" autoplay loop></audio>
+<!-- Audio Element -->
+<audio id="bgMusic" loop>
+    <source src="wedding_music.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="card">
+<script>
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+
+// Click icon to play/pause
+btn.addEventListener("click", function() {
+    if (music.paused) {
+        music.play();
+        btn.style.opacity = 0.6;  // indicate playing
+    } else {
+        music.pause();
+        btn.style.opacity = 1;    // indicate paused
+    }
+});
+</script>
+
+
+
+<script>
+window.addEventListener("load", function() {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.4;
+
+    const playPromise = music.play();
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {}).catch(error => {
+            document.addEventListener("click", function () {
+                music.play();
+            }, { once: true });
+        });
+    }
+});
+</script>
+
+ <div class="card">
         <h1>Wedding Invitation</h1>
         <h2>With the blessings of elders</h2>
 
