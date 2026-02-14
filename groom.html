@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meet the Groom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #800000, #b30000);
+            color: gold;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(0,0,0,0.6);
+            padding: 50px 30px;
+            border-radius: 20px;
+            border: 3px solid gold;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            animation: zoomIn 2s ease;
+            box-shadow: 0 0 30px gold;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid gold;
+            opacity: 0;
+            animation: fadeInImg 2s forwards;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            margin: 20px 0 10px 0;
+            min-height: 60px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeInQualification 2s forwards;
+            animation-delay: 2.5s;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: gold;
+            color: maroon;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: white;
+            color: maroon;
+        }
+
+        /* Animations */
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeInImg {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInQualification {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Groom Photo -->
+        <img src="groom.jpg" alt="Groom Photo">
+
+        <!-- Groom Name Typing Animation -->
+        <h1 id="groom-name"></h1>
+
+        <!-- Qualification -->
+        <h2>B.E (Cognizant)</h2>
+
+        <a href="index.html">Back to Invitation</a>
+    </div>
+
+    <script>
+        // Typing effect for Groom name
+        const name = "Vignesh";
+        let index = 0;
+        const speed = 150;
+
+        function typeName() {
+            if(index < name.length) {
+                document.getElementById("groom-name").innerHTML += name.charAt(index);
+                index++;
+                setTimeout(typeName, speed);
+            }
+        }
+
+        window.onload = function() {
+            typeName();
+        }
+    </script>
+
+</body>
+</html>

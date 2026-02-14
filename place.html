@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Venue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #800000, #b30000);
+            color: gold;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(0,0,0,0.6);
+            padding: 50px 30px;
+            border-radius: 20px;
+            border: 3px solid gold;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 40px gold;
+            animation: zoomIn 1.5s ease;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .pin {
+            font-size: 60px;
+            color: gold;
+            text-shadow: 0 0 15px gold;
+            animation: drop 1s ease forwards, glow 2s infinite alternate;
+            opacity: 0;
+            margin-bottom: 20px;
+        }
+
+        .welcome {
+            font-size: 22px;
+            margin: 20px 0;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1.5s;
+        }
+
+        .place-link {
+            font-size: 28px;
+            color: gold;
+            text-decoration: none;
+            border: 2px solid gold;
+            padding: 15px 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px gold;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2s;
+            transition: 0.3s;
+        }
+
+        .place-link:hover {
+            background: gold;
+            color: maroon;
+        }
+
+        a.back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: gold;
+            color: maroon;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2.5s;
+        }
+
+        a.back-btn:hover {
+            background: white;
+            color: maroon;
+        }
+
+        @keyframes drop {
+            0% { transform: translateY(-150px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px gold; }
+            50% { text-shadow: 0 0 25px gold; }
+            100% { text-shadow: 0 0 10px gold; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 40px; }
+            .pin { font-size: 50px; }
+            .welcome { font-size: 18px; }
+            .place-link { font-size: 24px; padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>📍 Wedding Venue</h1>
+
+        <!-- Animated pin -->
+        <div class="pin">📌</div>
+
+        <!-- Welcome Quote -->
+        <div class="welcome">“With joy in our hearts, we welcome you to celebrate our union!”</div>
+
+        <!-- Clickable place -->
+        <a class="place-link" href="https://www.google.com/maps?q=13.0827,80.2707" target="_blank">
+            Subiksha Mahal,Madurai
+        </a>
+
+        <br>
+        <a class="back-btn" href="index.html">Back to Invitation</a>
+    </div>
+
+</body>
+</html>

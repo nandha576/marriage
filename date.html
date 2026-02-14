@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Date</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #800000, #b30000);
+            color: gold;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(0,0,0,0.6);
+            padding: 50px 30px;
+            border-radius: 20px;
+            border: 3px solid gold;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            animation: zoomIn 1.5s ease;
+            box-shadow: 0 0 40px gold;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 50px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 30px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 2s;
+        }
+
+        .unit {
+            background: rgba(255,215,0,0.2);
+            padding: 15px 20px;
+            border-radius: 15px;
+            border: 2px solid gold;
+            box-shadow: 0 0 20px gold;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .unit span {
+            display: block;
+            font-size: 40px;
+            color: gold;
+            text-shadow: 0 0 10px gold;
+        }
+
+        .unit label {
+            font-size: 16px;
+            display: block;
+            margin-top: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: gold;
+            color: maroon;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: white;
+            color: maroon;
+        }
+
+        /* Animations */
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            #countdown {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .unit span {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>📅 Wedding Date</h1>
+        <h2>Sunday, February 22, 2026</h2>
+
+        <div id="countdown">
+            <div class="unit"><span id="days">0</span><label>Days</label></div>
+            <div class="unit"><span id="hours">0</span><label>Hours</label></div>
+            <div class="unit"><span id="minutes">0</span><label>Minutes</label></div>
+            <div class="unit"><span id="seconds">0</span><label>Seconds</label></div>
+        </div>
+
+        <a href="index.html">Back to Invitation</a>
+    </div>
+
+    <script>
+        // Set wedding date: 22 Feb 2026 at 10:00 AM
+        const weddingDate = new Date("February 22, 2026 10:00:00").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if(distance < 0){
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "🎉 Wedding Day is Here! 🎉";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000*60*60*24));
+            const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+            const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+            const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+        }, 1000);
+    </script>
+
+</body>
+</html>

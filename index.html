@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+    <audio id="bgMusic" src="c:\Users\குமரவே\Downloads\love_melody.mp3.mpeg"autoplay></audio>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #800000, #b30000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: gold;
+        }
+
+        .card {
+            background: rgba(0,0,0,0.6);
+            padding: 50px 30px;
+            border-radius: 20px;
+            border: 3px solid gold;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            animation: zoomIn 1.5s ease;
+            box-shadow: 0 0 30px gold;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 55px;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            margin: 20px 0;
+        }
+
+        /* Buttons bounce + glow */
+        .menu a {
+            display: block;
+            margin: 15px auto;
+            width: 220px;
+            padding: 12px;
+            background: gold;
+            color: maroon;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 0 15px gold;
+            transition: 0.3s;
+            animation: bounceBtn 1s infinite alternate;
+        }
+
+        .menu a:hover {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px gold;
+        }
+
+        @keyframes bounceBtn {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 40px; }
+            h2 { font-size: 24px; }
+            .names { font-size: 28px; }
+            .menu a { width: 180px; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="wedding_music.mp3" autoplay loop></audio>
+
+    <div class="card">
+        <h1>Wedding Invitation</h1>
+        <h2>With the blessings of elders</h2>
+
+        <div class="names">
+            Vignesh ❤️ Preetha
+        </div>
+
+        <div class="menu">
+            <a href="bride.html">Meet the Bride</a>
+            <a href="groom.html">Meet the Groom</a>
+            <a href="date.html">Wedding Date</a>
+            <a href="place.html">Wedding Venue</a>
+        </div>
+    </div>
+
+</body>
+</html>
