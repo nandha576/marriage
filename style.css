@@ -1,0 +1,89 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #800000, #b30000);
+  color: gold;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  animation: fadePage 1s ease;
+}
+
+/* ===== Smooth Page Fade ===== */
+@keyframes fadePage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Card Design (Glass Effect) ===== */
+.card {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px 25px;
+  border-radius: 25px;
+  border: 2px solid gold;
+  text-align: center;
+  width: 92%;
+  max-width: 500px;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+  animation: floatCard 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatCard {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-8px); }
+}
+
+/* ===== Headings ===== */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: gold;
+  color: maroon;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background: white;
+  transform: scale(1.08);
+  box-shadow: 0 0 25px gold;
+}
+
+/* ===== Menu Buttons ===== */
+.menu a {
+  display: block;
+  margin: 12px auto;
+  width: 220px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 18px; }
+  .card { padding: 30px 15px; }
+}
